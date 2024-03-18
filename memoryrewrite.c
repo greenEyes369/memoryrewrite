@@ -32,7 +32,9 @@ int main() {
         printf("Something went wrong...\n");
     }
     else {
-        scanf("%i", addr);
+        scanf("%p", &addr);
+
+        printf("%lx", (u_int64_t)addr);
 
         ptrace(PTRACE_ATTACH, pid, NULL, NULL);
 
